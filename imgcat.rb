@@ -2,16 +2,16 @@
 class Imgcat < Formula
   desc "Display images and gifs in your terminal"
   homepage ""
-  version "1.0.3"
+  version "1.0.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.3/imgcat_1.0.3_Darwin_x86_64.tar.gz"
-    sha256 "88a9675b978ff4a89108d93594faca38c4049dce47abe19777508877a6a7099f"
+    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.4/imgcat_1.0.4_Darwin_x86_64.tar.gz"
+    sha256 "0b0d50b5b2aaa9bc5e112d6e2f63e7956ebc611af46828399d71b56d49d5dbdc"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.3/imgcat_1.0.3_Linux_x86_64.tar.gz"
-    sha256 "0b11a08248e99ca76188441f0b50cf7ca4a6152475d0626d1e0318111342505c"
+    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.4/imgcat_1.0.4_Linux_x86_64.tar.gz"
+    sha256 "c61c7e5dfc8a9833562d6fd2939e937af01f0f6c98e14d87633e9c3151f53c9d"
   end
 
   depends_on "go"
