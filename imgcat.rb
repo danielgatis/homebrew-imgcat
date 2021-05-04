@@ -5,24 +5,24 @@
 class Imgcat < Formula
   desc "Display images and gifs in your terminal"
   homepage ""
-  version "1.0.6"
+  version "1.0.7"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.6/imgcat_1.0.6_Darwin_x86_64.tar.gz"
-    sha256 "b80fd566f030fcd6525478323ba0eebd82a77f727bbf0063eb4ee74b61822f01"
+    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.7/imgcat_1.0.7_Darwin_x86_64.tar.gz"
+    sha256 "5d0348445d7ce225e1b7e733f9dd8b3890f9710b657909aff4e53d390022a149"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.6/imgcat_1.0.6_Darwin_arm64.tar.gz"
-    sha256 "2819460d25b58e34989a68a443c892273439624ea82b8b9336d1f8d7b7c6d078"
+    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.7/imgcat_1.0.7_Darwin_arm64.tar.gz"
+    sha256 "85910aa728232990b50f132c7621238a74279c69ec04db895384472511362b4b"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.6/imgcat_1.0.6_Linux_x86_64.tar.gz"
-    sha256 "efb1789b616100ddc6189c707181005e6b1bcf67167a9de50f114c8866161925"
+    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.7/imgcat_1.0.7_Linux_x86_64.tar.gz"
+    sha256 "31e7e6bce2db95b12d7ee8557f2b5c8d2fffd97313d0f57fd63957c742c1ac4a"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.6/imgcat_1.0.6_Linux_arm64.tar.gz"
-    sha256 "3499a0a34b5c44c00a4b2b600c9f70e04644e626aef6e7142e8fce0c76889362"
+    url "https://github.com/danielgatis/imgcat/releases/download/v1.0.7/imgcat_1.0.7_Linux_arm64.tar.gz"
+    sha256 "4b454a0bd7290908229672f2a4dbe7e3568c89fedfa5b5f97e14503529bc6ea2"
   end
 
   depends_on "go"
