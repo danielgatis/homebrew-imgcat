@@ -5,34 +5,45 @@
 class Imgcat < Formula
   desc "Display images and gifs in your terminal"
   homepage ""
-  version "1.0.12"
-  bottle :unneeded
+  version "1.0.13"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.12/imgcat_1.0.12_Darwin_x86_64.tar.gz"
-      sha256 "f9fdf60e7a2266dd6c3aad66d88d85d07031cd770e21d71ca6de27f0fe63a42a"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.12/imgcat_1.0.12_Darwin_arm64.tar.gz"
-      sha256 "a85e33ebdefee86afc26748a5d6f2ac066e39ce46452bcf9417fc3a94136b0fe"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.13/imgcat_1.0.13_Darwin_arm64.tar.gz"
+      sha256 "6264c18ef3ce5578eec9c1eacde235b813de03ebb90011141eec2554ab6225a7"
+
+      def install
+        bin.install "imgcat"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.13/imgcat_1.0.13_Darwin_x86_64.tar.gz"
+      sha256 "8ff0fb10525155eb7df82c1c5433c3d0711e05bf530ac7622c3fef2ad91c706e"
+
+      def install
+        bin.install "imgcat"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.12/imgcat_1.0.12_Linux_x86_64.tar.gz"
-      sha256 "e0648032473dffba500bae64b1dbd4ccd4661118c1c3a7bb7dc1772a0ea7a2de"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.13/imgcat_1.0.13_Linux_x86_64.tar.gz"
+      sha256 "903d632413e465494884a281f6e4eccbbc4a63f7c353221ff671472c0e00088c"
+
+      def install
+        bin.install "imgcat"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.12/imgcat_1.0.12_Linux_arm64.tar.gz"
-      sha256 "8fe09177af69f82e13474ca59d2573bbee8523e54d9b6b2335375494b561bca6"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.13/imgcat_1.0.13_Linux_arm64.tar.gz"
+      sha256 "37cfbd40aa4675826918775d1cac38e77aa5cd3e455e70b86e49521e00dde9ff"
+
+      def install
+        bin.install "imgcat"
+      end
     end
   end
 
   depends_on "go"
-
-  def install
-    bin.install "imgcat"
-  end
 end
