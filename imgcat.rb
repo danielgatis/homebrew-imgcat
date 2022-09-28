@@ -5,22 +5,22 @@
 class Imgcat < Formula
   desc "Display images and gifs in your terminal"
   homepage ""
-  version "1.0.15"
+  version "1.0.16"
 
   depends_on "go"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.15/imgcat_1.0.15_Darwin_x86_64.tar.gz"
-      sha256 "1d430e35d6c2d324397bf1386312d75f05c2c5e50a4157c98788af2e9f220a8f"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.16/imgcat_1.0.16_Darwin_x86_64.tar.gz"
+      sha256 "1cfe14dd00154bed61283561466af987e02c968b99e8b20206e2d520e92e0109"
 
       def install
         bin.install "imgcat"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.15/imgcat_1.0.15_Darwin_arm64.tar.gz"
-      sha256 "0b21969a0c26613924bd422e52911d70c24cacdce526ed1eaccf3525575cd895"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.16/imgcat_1.0.16_Darwin_arm64.tar.gz"
+      sha256 "9dfe13d4aee1d03cba36fffb0b9a19091df1f39978f3e5516dff8b6fd209b665"
 
       def install
         bin.install "imgcat"
@@ -30,16 +30,16 @@ class Imgcat < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.15/imgcat_1.0.15_Linux_x86_64.tar.gz"
-      sha256 "239dae0bc74496d563974a98a7c9eaec504564fb9b3369d82ef5a9fc91d422b9"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.16/imgcat_1.0.16_Linux_x86_64.tar.gz"
+      sha256 "cf141227e7ef12329e6624e7aed3c1577bd4d801c685ef1216142e9fa194944f"
 
       def install
         bin.install "imgcat"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.15/imgcat_1.0.15_Linux_arm64.tar.gz"
-      sha256 "d265d161b9fc02a190cba4933ab207c406fbdb2f6006f2d7902018de69e428e4"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.16/imgcat_1.0.16_Linux_arm64.tar.gz"
+      sha256 "cd9d94d68e1496f4d29588ead57bcf4308fc9e24bdfafc072726dd3791666fdf"
 
       def install
         bin.install "imgcat"
