@@ -5,22 +5,22 @@
 class Imgcat < Formula
   desc "Display images and gifs in your terminal"
   homepage ""
-  version "1.0.16"
+  version "1.0.17"
 
   depends_on "go"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.16/imgcat_1.0.16_Darwin_x86_64.tar.gz"
-      sha256 "1cfe14dd00154bed61283561466af987e02c968b99e8b20206e2d520e92e0109"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.17/imgcat_1.0.17_Darwin_x86_64.tar.gz"
+      sha256 "b1d44c30f6cdb8d17399be6fc4203d9b12469f70cddf39828ed033bf5015f004"
 
       def install
         bin.install "imgcat"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.16/imgcat_1.0.16_Darwin_arm64.tar.gz"
-      sha256 "9dfe13d4aee1d03cba36fffb0b9a19091df1f39978f3e5516dff8b6fd209b665"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.17/imgcat_1.0.17_Darwin_arm64.tar.gz"
+      sha256 "1eabb51cd4da18fe32272130491d1f7df36d600f264b581e987b6cac1e87d8e2"
 
       def install
         bin.install "imgcat"
@@ -29,17 +29,17 @@ class Imgcat < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.16/imgcat_1.0.16_Linux_x86_64.tar.gz"
-      sha256 "cf141227e7ef12329e6624e7aed3c1577bd4d801c685ef1216142e9fa194944f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.17/imgcat_1.0.17_Linux_arm64.tar.gz"
+      sha256 "c49e6436dd41cdf6a28ab3d37473fc9e54f3dd84d047b94e31bc3308772c8479"
 
       def install
         bin.install "imgcat"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.16/imgcat_1.0.16_Linux_arm64.tar.gz"
-      sha256 "cd9d94d68e1496f4d29588ead57bcf4308fc9e24bdfafc072726dd3791666fdf"
+    if Hardware::CPU.intel?
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.17/imgcat_1.0.17_Linux_x86_64.tar.gz"
+      sha256 "348b6969c6d6325469919f67dca560a1eee8886af48a38a97bbb35539df99998"
 
       def install
         bin.install "imgcat"
