@@ -5,22 +5,20 @@
 class Imgcat < Formula
   desc "Display images and gifs in your terminal"
   homepage ""
-  version "1.0.20"
-
-  depends_on "go"
+  version "1.0.21"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.20/imgcat_1.0.20_Darwin_x86_64.tar.gz"
-      sha256 "7cc13b9f512ef6871bd75233ce166e55de28414ad6b53b8734bad41575838ff3"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.21/imgcat_1.0.21_darwin_amd64.zip"
+      sha256 "7d925d84417369568b0cf7162df8561d1b17b6aae9067a8be127b74b2c08496b"
 
       def install
         bin.install "imgcat"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.20/imgcat_1.0.20_Darwin_arm64.tar.gz"
-      sha256 "a40b8a878f29224906d469a198fb764c326e893a7bd8fd648b683d493a37dd1d"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.21/imgcat_1.0.21_darwin_arm64.zip"
+      sha256 "55f7f89ae2fc908e4601ff03381d167432df0677abf15cf1597b65a6e1927039"
 
       def install
         bin.install "imgcat"
@@ -30,19 +28,23 @@ class Imgcat < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.20/imgcat_1.0.20_Linux_x86_64.tar.gz"
-      sha256 "d0941ad206a11e4a9c942ffb7d3598615d1663a6b79c2c197e6ad61f8558f420"
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/danielgatis/imgcat/releases/download/v1.0.21/imgcat_1.0.21_linux_amd64.tar.gz"
+        sha256 "5edf72d61cc24b7424363f893499dba6e1bd4b34bb588648f431b4fd04d2ba24"
 
-      def install
-        bin.install "imgcat"
+        def install
+          bin.install "imgcat"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.20/imgcat_1.0.20_Linux_arm64.tar.gz"
-      sha256 "362edb4bed735067f2d960de4ce7308e4e5986f28234c09e438e03d91e3671c3"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/danielgatis/imgcat/releases/download/v1.0.21/imgcat_1.0.21_linux_arm64.tar.gz"
+        sha256 "c0aa2c64b0550630d7565f8e5be76ea68cd77e3d6b25cd5fe1590ce266703537"
 
-      def install
-        bin.install "imgcat"
+        def install
+          bin.install "imgcat"
+        end
       end
     end
   end
