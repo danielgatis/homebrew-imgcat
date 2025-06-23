@@ -5,20 +5,20 @@
 class Imgcat < Formula
   desc "Display images and gifs in your terminal"
   homepage ""
-  version "1.0.21"
+  version "1.0.22"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.21/imgcat_1.0.21_darwin_amd64.zip"
-      sha256 "7d925d84417369568b0cf7162df8561d1b17b6aae9067a8be127b74b2c08496b"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.22/imgcat_1.0.22_darwin_amd64.zip"
+      sha256 "2158dae6abf47f5fb91d6a9b4819ea732c451b0aed32b75a54c82647209bf58b"
 
       def install
         bin.install "imgcat"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.21/imgcat_1.0.21_darwin_arm64.zip"
-      sha256 "55f7f89ae2fc908e4601ff03381d167432df0677abf15cf1597b65a6e1927039"
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.22/imgcat_1.0.22_darwin_arm64.zip"
+      sha256 "33d148311faf0136169d9cc6637485960d2c2ecc253cffaac73336d3d26d932e"
 
       def install
         bin.install "imgcat"
@@ -29,8 +29,8 @@ class Imgcat < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/danielgatis/imgcat/releases/download/v1.0.21/imgcat_1.0.21_linux_amd64.tar.gz"
-        sha256 "5edf72d61cc24b7424363f893499dba6e1bd4b34bb588648f431b4fd04d2ba24"
+        url "https://github.com/danielgatis/imgcat/releases/download/v1.0.22/imgcat_1.0.22_linux_amd64.tar.gz"
+        sha256 "3d5f1b901d0d41a3d022548e35dc91dbeedd7c40172581d734220e808b580554"
 
         def install
           bin.install "imgcat"
@@ -39,8 +39,8 @@ class Imgcat < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/danielgatis/imgcat/releases/download/v1.0.21/imgcat_1.0.21_linux_arm64.tar.gz"
-        sha256 "c0aa2c64b0550630d7565f8e5be76ea68cd77e3d6b25cd5fe1590ce266703537"
+        url "https://github.com/danielgatis/imgcat/releases/download/v1.0.22/imgcat_1.0.22_linux_arm64.tar.gz"
+        sha256 "d953498460ff23138cc446f995ff7156dc83411731a2d747b8bc8d402f9c0075"
 
         def install
           bin.install "imgcat"
