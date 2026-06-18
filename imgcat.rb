@@ -10,7 +10,7 @@ class Imgcat < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_darwin_amd64.zip"
-      sha256 "f9be335a4d071cc77003b43704d2d52e0d22a49e5cbcf6878d72e5c0d2d023d6"
+      sha256 "383293193df5d666e717724da0813a7881edf02d74fb15f7ad381158facb5238"
 
       define_method(:install) do
         bin.install "imgcat"
@@ -18,7 +18,7 @@ class Imgcat < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_darwin_arm64.zip"
-      sha256 "6c3cadf6f2887594678185f93a6657a57f2abf9a6b5e2fa471166df1e3e5c2a3"
+      sha256 "51319e71bdae14ca050a1fb31da5925f0c935bdd3cab53ad3bacb44f2e5e4f47"
 
       define_method(:install) do
         bin.install "imgcat"
@@ -29,14 +29,14 @@ class Imgcat < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_linux_amd64.tar.gz"
-      sha256 "1582140594ebbd4a806f203e66f6b83dcfa94b44a2ddcad156f7e5bf3d1f1198"
+      sha256 "6f0c3fed9cf05ff6fdd2fd64d829e88236010cbf96149039a6b93cf8776adb0f"
       define_method(:install) do
         bin.install "imgcat"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_linux_arm64.tar.gz"
-      sha256 "d1bbb5b756904c153feb563a066c54eaafae870736483296aec233924a46d414"
+      sha256 "72bf475b852819397a7ca68d73d282276ccbbd191ae21fcd75b58910b7b25847"
       define_method(:install) do
         bin.install "imgcat"
       end
