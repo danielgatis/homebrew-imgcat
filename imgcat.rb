@@ -10,41 +10,35 @@ class Imgcat < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_darwin_amd64.zip"
-      sha256 "30e3b1401c63060fe9bd7c25e0b5865b156a99a4cfbc5f8f5a40eb504a8de6a1"
+      sha256 "f9be335a4d071cc77003b43704d2d52e0d22a49e5cbcf6878d72e5c0d2d023d6"
 
-      def install
+      define_method(:install) do
         bin.install "imgcat"
       end
     end
     if Hardware::CPU.arm?
       url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_darwin_arm64.zip"
-      sha256 "b7344bc3d599869e977218a6b7e0f8937df44777152a8c089bd6dd367169a93a"
+      sha256 "6c3cadf6f2887594678185f93a6657a57f2abf9a6b5e2fa471166df1e3e5c2a3"
 
-      def install
+      define_method(:install) do
         bin.install "imgcat"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_linux_amd64.tar.gz"
-        sha256 "0a82ad05080b5577b973040fb1b449ddd7a303693f976cb8bd326370c835440a"
-
-        def install
-          bin.install "imgcat"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_linux_amd64.tar.gz"
+      sha256 "1582140594ebbd4a806f203e66f6b83dcfa94b44a2ddcad156f7e5bf3d1f1198"
+      define_method(:install) do
+        bin.install "imgcat"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_linux_arm64.tar.gz"
-        sha256 "4eb27154eba27a47f5a700c7b0d76e3a04acdbdfd04c30d320cfbef7291334e9"
-
-        def install
-          bin.install "imgcat"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/danielgatis/imgcat/releases/download/v1.0.23/imgcat_1.0.23_linux_arm64.tar.gz"
+      sha256 "d1bbb5b756904c153feb563a066c54eaafae870736483296aec233924a46d414"
+      define_method(:install) do
+        bin.install "imgcat"
       end
     end
   end
